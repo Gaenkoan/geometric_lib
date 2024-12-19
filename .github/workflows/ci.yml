@@ -1,15 +1,15 @@
 name: Tests Workflow
 
 on:
-  push :
+  push:
     branches:
       - main
       - release
   pull_request:
     branches:
-    - main
-    - release
-    - develop
+      - main
+      - release
+      - develop
 
 jobs:
   test:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Print information
         run: |
-          echo "DO: ${{ env. FULL_NAME }}"
+          echo "DO: ${{ env.FULL_NAME }}"
           echo "Номер группы: ${{ env.GROUP_NUMBER }}"
           echo "Ник на Github: ${{ github.actor }}"
 
@@ -33,16 +33,16 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  
+
       - name: Run unit tests
         run: |
-
-
           python -m unittest discover -s tests -p "test_*.py"
 
-
-
-      
       - name: Lint code with flake8
         run: |
           pip install flake8
           flake8 --ignore=F401 .
+
