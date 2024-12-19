@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FULL_NAME: "Гаенко Анастасия Константиновна"
-      GROUP_NUMBER: "M3110"
+      GROUP_NUMBER: "M3110."
 
     steps:
       - name: Checkout repository
