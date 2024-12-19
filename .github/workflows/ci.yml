@@ -37,9 +37,9 @@ jobs:
         with:
           python-version: '3.13'
 
+
       - name: Run unit tests
         run: |
-
 
           python -m unittest discover -s tests -p "test_*.py"
           
@@ -50,8 +50,3 @@ jobs:
           pip install flake8
           flake8 . --ignore=F401,W191,E305,E501,E302,W293,E101,E301,W391,W292.
 
-
-
-
-
-          
