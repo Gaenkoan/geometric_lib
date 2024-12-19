@@ -3,20 +3,24 @@ name: Tests Workflow
 on:
   push :
     branches:
-      - master
+      - main
       - release
-  pull_request:
+      - develop
+      - feat/tests
+  pull_request: 
     branches:
-    - master
-    - release
-    - develop
+      - main
+      - release
+      - develop
+      - feat/tests
+
 
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
       FULL_NAME: "Гаенко Анастасия Константиновна"
-      GROUP_NUMBER: "M3110"
+      GROUP_NUMBER: "M3110."
 
     steps:
       - name: Checkout repository
